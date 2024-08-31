@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup & Login Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sign.css">
+</head>
+<body>
+  <div class="background">
+    <div class="form-container">
+      <div class="tabs">
+            <button class="tab-link active" onclick="showForm('login')">Login</button>
+            <button class="tab-link" onclick="showForm('signup')">Sign Up</button>
+          </div>
+        <!-- Login Form -->
+        <div id="login" class="form-content active">
+          <h2>Login</h2>
+          <form id="login-form">
+              <!-- Email -->
+                <div class="form-group">
+                    <input
+                    type="email"
+                    id="email-login"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    >
+                    <label for="email-login">Email *</label>
+                  </div>
+                  
+                  <!-- Password -->
+                  <div class="form-group">
+                  <input
+                  type="password"
+                  id="password-login"
+                  name="password"
+                  placeholder="Enter your password"
+                  minlength="6"
+                  required
+                  >
+                  <label for="password-login">Password *</label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Login</button>
+              </form>
+            </div>
+
+        <!-- Signup Form -->
+        <div id="signup" class="form-content">
+          <h2>Sign Up</h2>
+            <form id="signup-form">
+                <!-- Name -->
+                <div class="form-group">
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                    <label for="name">Name *</label>
+                  </div>
+                  
+                  <!-- Email -->
+                  <div class="form-group">
+                    <input
+                    type="email"
+                        id="email-signup"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                        >
+                    <label for="email-signup">Email *</label>
+                  </div>
+
+                  <!-- Password -->
+                  <div class="form-group">
+                    <input
+                        type="password"
+                        id="password-signup"
+                        name="password"
+                        placeholder="Enter your password"
+                        minlength="6"
+                        required
+                        >
+                        <label for="password-signup">Password *</label>
+                      </div>
+                      
+                      <!-- Date of Birth and Gender -->
+                      <div class="form-row">
+              <!-- Date of Birth -->
+                <div class="form-group">
+                  <input
+                      type="date"
+                      id="dob"
+                      name="dob"
+                      max="2010-12-31"
+                      required 
+                   >
+                  <label for="dob">Date of Birth *</label>
+                    </div>
+
+                      <!-- Gender -->
+                    <div class="form-group">
+                      <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select your gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                  <label for="gender">Gender *</label>
+                    </div>
+                      </div>
+
+                      
+                      <!-- Profession -->
+                      <div class="form-group">
+                    <input
+                        type="text"
+                        id="profession"
+                        name="profession"
+                        placeholder="Enter your profession"
+                        required
+                        >
+                        <label for="profession">Profession *</label>
+                      </div>
+
+                      <!-- Height and Weight -->
+                      <div class="form-row">
+                        <!-- Weight -->
+                    <div class="form-group">
+                      <input
+                      type="number"
+                      id="weight"
+                      name="weight"
+                            placeholder="eg. 70kg"
+                            min="30"
+                            max="300"
+                            required
+                        >
+                        <label for="weight">Weight (kg) *</label>
+                      </div>
+                      
+                      <!-- Height -->
+                      <div class="form-group">
+                        <input
+                        type="number"
+                        id="height"
+                        name="height"
+                        placeholder="eg. 6 feet"
+                        min="2"
+                        max="8"
+                        required
+                        >
+                        <label for="height">Height (feet) *</label>
+                      </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+        </div>
+          </div>
+        </div>
+        <script src="sign.js"></script>
+</body>
+</html>

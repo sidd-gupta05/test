@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.background {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-image: url("https://wallpapercave.com/wp/wp2968617.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.form-container {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 10px 40px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(31, 31, 31, 0.37);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tabs button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: border-bottom 0.3s ease;
+}
+.tabs button.active {
+  border-bottom: 3px solid #00acee;
+  margin-left: 30px;
+  margin-right: 30px;
+  transform: scale(1.4);
+  transition: transform 0.3s ease-in, border-bottom-width 0.3s ease-in;
+}
+.tabs button {
+  border-bottom: 3px solid transparent; 
+  transition: transform 0.3s ease-out, border-bottom-width 0.3s ease-out;
+}
+.tabs button:hover,
+.tabs button:not(.active) {
+  transform: scale(1);
+  border-bottom-width: 3px; 
+}
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.form-group input::placeholder {
+  color: #ddd;
+}
+.form-group input:focus {
+  outline: none;
+  border-color: #00acee;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.form-group input:focus + label {
+  transform: scale(1.1);
+  color: #00acee;
+}
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.form-row .form-group {
+  flex: 1;
+}
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00acee;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: inset 2px 2px 5px #BABECC;
+}
+.submit-btn:hover {
+  background-color: #000ecf;
+}
+@media (max-width: 500px) {
+  .form-row {
+      flex-direction: column;
+  }
+}
+.form-content {
+  display: none;
+}
+.form-content.active {
+  display: block;
+}
+.gender-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.gender-group label {
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  margin: 0;
+  margin-left: 5px;
+}
+.gender-group input[type="radio"] {
+  margin: 0;
+}
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff; 
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  appearance: none;
+}
+.form-group select option[value=""][disabled] {
+  color: #191919;
+}
+.form-group select:focus {
+  outline: none;
+  border-color: #00acee;
+  background-color: rgba(35, 33, 33, 0.2);
+}
+.form-group select:focus option {
+  color: #000; 
+}
