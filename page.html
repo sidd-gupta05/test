@@ -6,35 +6,83 @@
     <title>Health Hub!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playwrite+CU:wght@100..400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="page.css">
 </head>
 <body>
-    <div class="nav-bar">
-        <div class="nav-left">
-            <img src="https://static.vecteezy.com/system/resources/previews/000/537/055/original/hand-holding-medical-icon-symbol-vector-healthcare-concept.jpg" alt="logo" id="logo">
-            <div class="nav-text">Health Hub!</div>
+    <div id="top" class="page">
+        <div class="nav-bar">
+            <div class="nav-left">
+                <img src="health-hub.jpeg" alt="logo" id="logo">
+                <div class="nav-text">Health Hub!</div>
+            </div>
+            <div class="btn">
+                <a class="bs" href="#top">Home</a>
+                <button class="bs">Disease</button>
+                <button class="bs">Diet</button>
+                <button class="bs">Exercise</button>
+                <button class="bs">Growth-report</button>
+                <a class="bs" href="#About-us">About-us</a>
+                <a class="bs" href="#contact-us">Contact</a>
+                <button class="bs" onclick="location.href='sign.html'">Login</button>
+            </div>
         </div>
-        <div class="btn">
-            <button class="bs">Home</button>
-            <button class="bs">Disease</button>
-            <button class="bs">Diet</button>
-            <button class="bs">Exercise</button>
-            <button class="bs">Growth-report</button>
-            <button class="bs">About us</button>
-            <button class="bs">Contact</button>
-            <button class="bs" onclick="location.href='sign.html'">Login</button>
+    
+        <div class="home-page">
+            <video autoplay loop muted playsinline>
+                <source src="./myVid.mp4" type="video/mp4">
+                <source src="./myVid.webm" type="video/webm">
+            </video>
+            <div class="welcome-text">Welcome to Our Health Hub!</div>
+            <div class="additional-text">
+                We are dedicated to providing you with the latest information and resources for a healthier lifestyle. Explore our site to learn more about managing diseases, maintaining a balanced diet, staying active, and much more. Together, let's embark on a journey to a healthier, happier you!
+            </div>
+        </div>
+        
+        <div class="about" id="About-us">
+            <h1>About Us</h1>
+        </div>
+        <div class="member-container">
+            <div class="member" id="puja">
+                <div class="photo">
+                    <img src="https://th.bing.com/th/id/OIP.Pb5a9XoVFwMqtzWpC90MoQAAAA?w=300&h=300&rs=1&pid=ImgDetMain" class="pic">
+                </div>
+                <h1 class="name">Puja Kukade</h1>
+            </div>
+            <div class="member" id="sidd">
+                <div class="photo">
+                    <img src="https://img.freepik.com/premium-photo/portrait-businessman-standing-with-thumbs-up_343960-46801.jpg" class="pic">
+                </div>
+                <h1 class="name">Siddharth R. Gupta</h1>
+            </div>
+            <div class="member" id="sandeep">
+                <div class="photo">
+                    <img src="https://headshots-inc.com/wp-content/uploads/2023/02/pure-white-background-for-professional-headshots-1.jpg" class="pic">
+                </div>
+                <h1 class="name">Sandeep Vishwakarma</h1>
+            </div>
+            <div class="member" id="krrish">
+                <div class="photo">
+                    <img src="https://getreadyforthefuture.com/wp-content/uploads/2023/07/Charlie.jpg" class="pic">
+                </div>
+                <h1 class="name">Krrish Mahar</h1>
+            </div>
+        </div>
+
+        </div>
+        <div class="contact" id="contact-us">
+            <img src="contact.svg" id="Contact-Icon" >
+            <div class="contact-info">
+                <h1>Contact Us</h1>
+                <h3>Phone:</h3>
+                <h2>+123456789</h2>
+                <h3>Email:</h3>
+                <h2>siddharthgupta5482005@gmail.com</h2>
+            </div>
         </div>
     </div>
 
-    <div class="home-page">
-        <video autoplay loop muted playsinline>
-            <source src="./myVid.mp4" type="video/mp4">
-            <source src="./myVid.webm" type="video/webm">
-        </video>
-        <div class="welcome-text">Welcome to Our Health Hub!</div>
-        <div class="additional-text">
-            We are dedicated to providing you with the latest information and resources for a healthier lifestyle. Explore our site to learn more about managing diseases, maintaining a balanced diet, staying active, and much more. Together, let's embark on a journey to a healthier, happier you!
-        </div>
-    </div>
+    <script src="page.js"></script>
 </body>
 </html>

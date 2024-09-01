@@ -2,6 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.page {
+    background-color: rgb(248, 248, 246);
+    z-index: -2;
 }
 
 .nav-bar {
@@ -15,7 +25,9 @@
     padding: 0 50px;
     z-index: 10;
     backdrop-filter: blur(20px);
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgb(207, 196, 196);
+    border-radius: 50px;
+    margin-top: 15px;
 }
 
 .nav-left {
@@ -58,8 +70,8 @@
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 50px;
-    box-shadow: 2px 2px 5px rgb(255, 255, 255);
-    background-color: #95cdc7;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: #a4a6a6;
 }
 
 .home-page video {
@@ -69,39 +81,141 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: 1;
 }
 
 .home-page {
-position: relative;
-height: 100vh;
-overflow: hidden;
-padding-top: 100px; 
-display: flex;
-flex-direction: column;
-justify-content: center; 
-align-items: center; 
-text-align: center; 
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 100px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
 }
 
 .welcome-text {
-color: rgb(0, 0, 0);
-font-size: 50px;
-font-weight: bold;
-line-height: 1.2;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-max-width: 80%;
-margin: 0;
-padding: 0 20px;
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    max-width: 80%;
+    margin: 0;
+    padding: 0 20px;
+    z-index: 2;
 }
 
 .additional-text {
-color: rgb(0, 0, 0);
-font-size: 30px;
-font-weight: 300;
-line-height: 1.4;
-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-max-width: 80%; 
-margin: 20px auto 0;
-padding: 0 20px;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    max-width: 80%; 
+    margin: 20px auto 0;
+    padding: 0 20px;
+    z-index: 2;
+}
+
+.contact {
+    display: flex;
+    align-items: flex-start; 
+    padding: 50px;
+    margin-left: 50px;
+    gap: 20px; 
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.contact-info h1 {
+    margin-bottom: 10px;
+    font-size: 50px;
+}
+
+.contact-info h3 {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.about {
+    text-align: center;
+    font-size: 40px;
+    margin-top: 50px; 
+}
+
+@keyframes apper {
+    from {
+        clip-path: inset(100% 100% 0 0); 
+        opacity: 0; 
+    }
+    to {
+        clip-path: inset(0 0 0 0); 
+        opacity: 1; 
+    }
+}
+
+.member-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    animation: apper linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.member {
+    height: 500px;
+    width: 300px;
+    background-color: #FBF9F1;
+    margin: 25px 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+                rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+                rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+                rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s, font-size 0.2s ;
+}
+.member:hover{
+    transform: scale(1.15);
+    font-size: 2px;
+    color: rgb(223, 19, 19);
+}
+
+.photo {
+height: 250px; 
+width: 250px; 
+background-color: blueviolet;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: -125px;
+margin-bottom: 15px; 
+overflow: hidden; 
+}
+
+.pic {
+width: 100%;
+height: 100%;
+object-fit: cover; 
+}
+
+
+.name {
+    font-family: "Abril Fatface", serif;
+    font-size: 25px;
+    font-weight: 100;
 }
