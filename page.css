@@ -28,6 +28,7 @@ html {
     background-color: #FBF9F1;
     border-radius: 50px;
     margin-top: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
 .nav-left {
@@ -40,11 +41,6 @@ html {
     border-radius: 50%;
     border: 1px solid black;
     box-shadow: 2px 2px 10px 2px gray;
-}
-
-#logo:hover{
-    transition-duration: 0.3;
-    transform: scale(1.5);
 }
 
 .nav-text {
@@ -66,7 +62,6 @@ html {
     border: none;
     cursor: pointer;
     font-family: inherit;
-    font-size: 25px;
     font-weight: normal;
     transform-style: preserve-3d;
     transform: scale(var(--s, 1)) perspective(600px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
@@ -196,6 +191,7 @@ html {
     animation: apper linear;
     animation-timeline: view();
     animation-range: entry 0% cover 40%;
+    cursor: pointer;
 }
 
 .member {
@@ -217,7 +213,7 @@ html {
 .member:hover{
     transform: scale(1.15);
     font-size: 2px;
-    color: rgb(223, 19, 19);
+    color: rgb(105, 76, 208);
 }
 
 .photo {
@@ -238,6 +234,13 @@ width: 100%;
 height: 100%;
 object-fit: cover; 
 border-radius: 10px;
+filter: grayscale(100%);
+transition: filter 0.3s ease-in-out; 
+}
+
+.member:hover .pic{
+    filter: grayscale(0); 
+    transition: filter 0.3s ease-in-out; 
 }
 
 
@@ -346,7 +349,7 @@ border-radius: 10px;
     font-weight: normal;
     transform-style: preserve-3d;
     transform: scale(var(--s, 1)) perspective(600px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-    transition: transform 0.1s, box-shadow 0.3s, padding 0.3s;
+    transition: transform 0.1s, box-shadow 0.3s, padding 0.3s , font-weight 0.2;
     perspective: 600px;
     margin-left: 50px;
 }
