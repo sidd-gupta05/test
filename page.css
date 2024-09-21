@@ -24,7 +24,6 @@ html {
     justify-content: space-between;
     padding: 0 50px;
     z-index: 10;
-    backdrop-filter: blur(20px);
     background-color: #FBF9F1;
     border-radius: 50px;
     margin-top: 15px;
@@ -282,6 +281,10 @@ transition: filter 0.3s ease-in-out;
     text-align: center;
 }
 
+#symptomInput{
+    margin-left: 5px;
+}
+
 .search-diseases {
     width: 70%;
     padding: 10px;
@@ -294,6 +297,10 @@ transition: filter 0.3s ease-in-out;
 .search-diseases:hover{
     border:3px solid #0056b3;
     transform: scale(1.1);
+}
+
+#predictButton{
+    margin-left: 150px;
 }
 
 .search-button {
@@ -311,6 +318,7 @@ transition: filter 0.3s ease-in-out;
     transition: transform 0.1s, box-shadow 0.3s, padding 0.3s;
     perspective: 600px;
 }
+
 
 .search-button:hover {
     background-color: #0056b3;

@@ -20,7 +20,6 @@
             <div class="btn">
                 <a class="bs" href="#top">Home</a>
                 <a class="bs" href="#disease-detective">Disease Detective</a>
-                <button class="bs">Growth-report</button>
                 <a class="bs" href="#About-us">About-us</a>
                 <a class="bs" href="#contact-us">Contact</a>
                 <button class="bs" onclick="location.href='sign.html'">Login</button>
@@ -45,27 +44,23 @@
                     <h1>Disease Detective</h1>
                 </div>
                 <div class="disease-search">
-                    <pre>
-                        <h3 class="text">Enter the Symptoms</h3>
-                    <input type="text" class="search-diseases" placeholder="Cold , Fever , etc">
-                    <button class="search-button">Predict</button>
-                    </pre>
+                    <h3 class="text">Enter the Symptoms</h3>
+                    <input type="text" class="search-diseases" id="symptomInput" placeholder="Cold, Fever, etc">
+                    <button class="search-button" id="predictButton">Predict</button>
                 </div>
                 <div class="ai">
-                    <h1>Our Ai Output</h1>
+                    <h1>Our AI Output</h1>
                 </div>
-                <div class="mini-button">
-                    <button class="b">Disease</button>
-                    <button class="b">Description</button>
-                    <button class="b">Precaution</button>
-                    <button class="b">Medication</button>
-                    <button class="b">Workout</button>
-                    <button class="b">Diets</button>
+                <div class="mini-button" id="miniButtonContainer" style="display: none;">
+                    <button class="b" id="diseaseButton">Disease</button>
+                    <button class="b" id="descriptionButton">Description</button>
+                    <button class="b" id="precautionButton">Precaution</button>
+                    <button class="b" id="medicationButton">Medication</button>
+                    <button class="b" id="workoutButton">Workout</button>
+                    <button class="b" id="dietsButton">Diets</button>
                 </div>
             </div>
             
-            
-        
         <div class="about" id="About-us">
             <h1>About Us</h1>
         </div>
@@ -105,7 +100,7 @@
                 <h3>Phone:</h3>
                 <h2>+123456789</h2>
                 <h3>Email:</h3>
-                <h2>siddharthgupta2482005@gmail.com</h2>
+                <h2>Health-Hub@gmail.com</h2>
             </div>
         </div>
     </div>
@@ -113,7 +108,6 @@
     <div class="copywrite">
         <h3>© 2024-2035, Health-Hub.com, Inc. or its affiliates</h3>
     </div>
-
     <script src="page.js"></script>
 </body>
 </html>

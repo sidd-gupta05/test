@@ -39,3 +39,23 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   
   alert('Login data stored successfully!');
 });
+
+    document.getElementById('signup-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Collecting data and other logic...
+
+        // Redirect to page.html after successful signup
+        window.location.href = 'page.html';
+    });
+
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        // Collecting data and other logic...
+
+        // Redirect to page.html after successful login
+        window.location.href = 'page.html';
+    });
+
+    // After successful signup or login
+sessionStorage.setItem('loggedIn', 'true');
+
