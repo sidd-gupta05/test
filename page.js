@@ -1,7 +1,7 @@
 const responses = {
     "data": [
         {
-            "symptoms": "cold, fever",
+            "symptoms": "cold, fever, ",
             "disease": "Common Cold or Flu",
             "description": "A viral infection affecting the nose and throat.",
             "precaution": "Rest, drink plenty of fluids, and avoid cold exposure.",

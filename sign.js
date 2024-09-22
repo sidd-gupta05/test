@@ -26,7 +26,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
   
   console.log('Signup Data:', { name, email, password, dob, gender, profession, weight, height });
   
-  alert('Signup data stored successfully!');
+  alert('Signup successfully!');
 });
 
 document.getElementById('login-form').addEventListener('submit', function(event) {
@@ -37,7 +37,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   
   console.log('Login Data:', { email, password });
   
-  alert('Login data stored successfully!');
+  alert('Login successfully!');
 });
 
     document.getElementById('signup-form').addEventListener('submit', function(event) {

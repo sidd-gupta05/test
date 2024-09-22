@@ -21,9 +21,9 @@ html, body {
 }
 .form-container {
   background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(100px);
   padding: 10px 40px;
-  border-radius: 10px;
+  border-radius: 30px;
   width: 100%;
   max-width: 500px;
   box-shadow: 0 8px 32px rgba(31, 31, 31, 0.37);
@@ -83,12 +83,17 @@ html, body {
   width: 100%;
   padding: 12px 15px;
   border: 2px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 16px;
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
 }
+
+input:hover{
+  border-radius: 50px;
+}
+
 .form-group input::placeholder {
   color: #ddd;
 }
@@ -110,19 +115,22 @@ html, body {
   flex: 1;
 }
 .submit-btn {
-  width: 100%;
+  width: 60%;
   padding: 12px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   background-color: #00acee;
-  color: #fff;
+  color: #000000;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  box-shadow: inset 2px 2px 5px #BABECC;
+  display: block;
+  margin: 0 auto;
+  
 }
 .submit-btn:hover {
+  color: #fff;
   background-color: #000ecf;
 }
 @media (max-width: 500px) {
@@ -140,7 +148,13 @@ html, body {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: border-radius 0.3s ease;
 }
+
+.form-group select:hover {
+  border-radius: 20px; 
+}
+
 .gender-group label {
   font-weight: 500;
   font-size: 16px;
@@ -155,7 +169,7 @@ html, body {
   width: 100%;
   padding: 12px 15px;
   border: 2px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 16px;
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff; 
