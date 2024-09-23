@@ -1404,7 +1404,7 @@ const responses = {
                 "diets": "Diet rich in antioxidants, omega-3 fatty acids, and vitamin D."
             },
             {
-                "disease": "Marfan Syndrome",
+                "disease": "",
                 "symptoms": "tall stature, long limbs, heart problems, eye issues",
                 "description": "A genetic disorder affecting connective tissue, leading to features like long limbs and cardiovascular issues.",
                 "precaution": "Regular cardiovascular evaluations; avoid high-impact sports.",
@@ -2460,9 +2460,49 @@ const responses = {
     ]
 };
 
+function getLevenshteinDistance(a, b) {
+    const matrix = [];
+
+    for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+
+    for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
+
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1));
+            }
+        }
+    }
+
+    return matrix[b.length][a.length];
+}
+
+// Function to correct symptoms using Levenshtein distance
+function correctSpelling(symptom, validSymptoms) {
+    let closestMatch = validSymptoms[0];
+    let minDistance = getLevenshteinDistance(symptom, validSymptoms[0]);
+
+    for (let i = 1; i < validSymptoms.length; i++) {
+        const distance = getLevenshteinDistance(symptom, validSymptoms[i]);
+        if (distance < minDistance) {
+            minDistance = distance;
+            closestMatch = validSymptoms[i];
+        }
+    }
+
+    return closestMatch;
+}
+
 document.getElementById('predictButton').addEventListener('click', function() {
     const symptomsInput = document.getElementById('symptomInput').value.trim().toLowerCase();
-    
+
     // Check if symptoms are entered
     if (symptomsInput !== "") {
         document.getElementById('miniButtonContainer').style.display = 'flex';
@@ -2470,45 +2510,56 @@ document.getElementById('predictButton').addEventListener('click', function() {
         alert("Please enter symptoms before predicting.");
         return;
     }
-    
+
     // Split the input symptoms into an array
-    const enteredSymptoms = symptomsInput.split(',').map(symptom => symptom.trim());
+    let enteredSymptoms = symptomsInput.split(',').map(symptom => symptom.trim());
+
+    // Get all valid symptoms from the responses object
+    let validSymptoms = [];
+    responses.data.forEach(response => {
+        validSymptoms = validSymptoms.concat(response.symptoms.split(',').map(s => s.trim().toLowerCase()));
+    });
+
+    // Correct the spelling of each entered symptom
+    enteredSymptoms = enteredSymptoms.map(symptom => correctSpelling(symptom, validSymptoms));
+
+    let bestMatch = null;
+    let maxMatches = 0;
 
     // Find matching symptoms from the responses object
-    let matchedSymptoms = null;
-    for (let i = 0; i < responses.data.length; i++) {
-        const keySymptoms = responses.data[i].symptoms.split(',').map(symptom => symptom.trim());
-        
-        // Check if all entered symptoms match the ones in the key
-        const allMatch = enteredSymptoms.every(symptom => keySymptoms.includes(symptom));
-        if (allMatch) {
-            matchedSymptoms = responses.data[i];
-            break;
-        }
-    }
+    responses.data.forEach(response => {
+        const keySymptoms = response.symptoms.split(',').map(symptom => symptom.trim());
 
-    // Add click listeners for each mini button
-    if (matchedSymptoms) {
+        // Count how many symptoms match
+        let matchCount = enteredSymptoms.filter(symptom => keySymptoms.includes(symptom)).length;
+
+        // Prioritize diseases with more matching symptoms
+        if (matchCount > 0 && matchCount > maxMatches) {
+            maxMatches = matchCount;
+            bestMatch = response;
+        }
+    });
+
+    // Add click listeners for each mini button if there's a match
+    if (bestMatch) {
         document.getElementById('diseaseButton').onclick = function() {
-            alert("Disease: " + matchedSymptoms.disease);
+            alert("Disease: " + bestMatch.disease);
         };
         document.getElementById('descriptionButton').onclick = function() {
-            alert("Description: " + matchedSymptoms.description);
+            alert("Description: " + bestMatch.description);
         };
         document.getElementById('precautionButton').onclick = function() {
-            alert("Precaution: " + matchedSymptoms.precaution);
+            alert("Precaution: " + bestMatch.precaution);
         };
         document.getElementById('medicationButton').onclick = function() {
-            alert("Medication: " + matchedSymptoms.medication);
+            alert("Medication: " + bestMatch.medication);
         };
         document.getElementById('workoutButton').onclick = function() {
-            alert("Workout: " + matchedSymptoms.workout);
+            alert("Workout: " + bestMatch.workout);
         };
         document.getElementById('dietsButton').onclick = function() {
-            alert("Diets: " + matchedSymptoms.diets);
+            alert("Diets: " + bestMatch.diets);
         };
-    } else {
-        alert("No data available for the entered symptoms.");
     }
 });
 
