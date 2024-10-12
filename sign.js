@@ -59,3 +59,22 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     // After successful signup or login
 sessionStorage.setItem('loggedIn', 'true');
 
+document.addEventListener('DOMContentLoaded', function () {
+  const yesRadio = document.getElementById('medical-background-yes');
+  const noRadio = document.getElementById('medical-background-no');
+  const medicalBackgroundInput = document.getElementById('medical-background-input');
+
+  yesRadio.addEventListener('change', function () {
+      if (yesRadio.checked) {
+          medicalBackgroundInput.style.display = 'block';
+      }
+  });
+
+  noRadio.addEventListener('change', function () {
+      if (noRadio.checked) {
+          medicalBackgroundInput.style.display = 'none';
+      }
+  });
+});
+
+

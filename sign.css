@@ -187,3 +187,28 @@ input:hover{
 .form-group select:focus option {
   color: #000; 
 }
+
+.medical-background-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  margin-left: -200px;
+}
+
+.medical-background-group input[type="radio"] {
+  margin: 0;
+  margin-left: 200px; 
+}
+
+.medical-background-input {
+  display: none;
+  margin-top: 10px;
+}
+
+.medical-background-group label {
+  margin-left: 0;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+}
